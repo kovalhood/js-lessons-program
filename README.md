@@ -1,1 +1,1 @@
-# js-lessons-program
+# JS Lessons Program
