@@ -9,10 +9,10 @@
 // If the password is "I'm an admin", then output the string "Hello!"
 // Else output the string "Wrong password"
 
-const login = prompt("Enter login").toLowerCase;
+const login = prompt("Enter login");
 
 if (login === "Admin") {
-    const password = prompt("Enter password").toLowerCase;
+    const password = prompt("Enter password");
 
     if (password === "I'm an admin") {
         console.log("Hello!");
