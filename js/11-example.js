@@ -3,3 +3,12 @@
 
 // const max = 100;
 // const min = 20;
+
+const max = 100;
+const min = 20;
+
+for (let i = 0; i <= 1000; i += 1){
+    if (i % 5 === 0) {
+        console.log("%5:", i);
+    }
+}

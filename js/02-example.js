@@ -7,8 +7,19 @@
 // let timestring;
 
 // if (minutes > 0) {
-//   timestring = `${hours} ч. ${minutes} min.`;
+//   timestring = `${hours} h. ${minutes} min.`;
 // } else {
 //   timestring = `${hours} h.`;
 // }
 // console.log(timestring);
+
+const hours = 14;
+const minutes = 0;
+let timestring;
+
+if (minutes === 0) {
+  timestring = `${hours} h.`;
+} else {
+  timestring = `${hours} h. ${minutes} m.`;
+}
+console.log(timestring);
