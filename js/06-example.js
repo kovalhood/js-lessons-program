@@ -7,3 +7,9 @@
 // as a separator of the fractional part can be comma. 
 
 // The body mass index should be rounded to one decimal place;
+
+// let weight = '88,3';
+// let height = '1.75';
+
+// const bmi = ;
+// console.log(bmi); // 28.8
