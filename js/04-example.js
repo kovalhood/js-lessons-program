@@ -4,3 +4,8 @@
 
 // const value = 27.5;
 
+const value = 27.5;
+console.log(Math.floor(value)); // 27
+console.log(Math.ceil(value)); // 28
+console.log(Math.round(value)); // 28
+

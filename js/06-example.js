@@ -13,3 +13,12 @@
 
 // const bmi = ;
 // console.log(bmi); // 28.8
+
+let weight = '88,3';
+let height = '1.75';
+
+let convertedWeight = parseFloat(weight);
+let convertedHeight = parseFloat(height);
+
+const bmi = convertedWeight / Math.pow(convertedHeight, 2);
+console.log(bmi); // 28.8
