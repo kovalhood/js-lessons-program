@@ -24,11 +24,3 @@ for (let i = 1; i < langs.length; i += 1) {
 }
 
 console.log(langs);
-
-
-// Or, cheat way
-
-// const langs = ["python", "javascript", "c++", "haskel", "php", "ruby"];
-// console.log(langs)
-// langs.sort()
-// console.log(langs)
