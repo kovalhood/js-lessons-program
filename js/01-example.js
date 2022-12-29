@@ -8,3 +8,24 @@
 // Insert "Country" and "Reggae" at the beginning of the array.
 
 // const genres = ;
+
+// const genres = ['Jazz', 'Blues'];
+// console.log(genres[genres.length]);
+
+// genres.push("Rock'n'roll");
+
+// const firstEl = genres[0]
+// console.log(firstEl);
+
+// const lastEl = genres[genres.length - 1]
+// console.log(lastEl);
+
+// const deleteFirstE = genres.shift();
+// console.log(deleteFirstE);
+// console.log(genres);
+
+// genres.unshift('Country', 'Reggae');
+// console.log(genres);
+// genres.splice(-2 , 1, 'Country')
+
+// console.log(genres);

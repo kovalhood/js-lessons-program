@@ -5,3 +5,10 @@
 // Element numbering must start from 1.
 
 // const fruits = ['🍎', '🍇', '🍑', '🍌', '🍋'];
+
+for (let i = 0, num = 1; i < fruits.length; i += 1, num += 1) {
+    console.log(`Number ${i+1}`, fruits[i]);
+    console.log(`Number ${num}`, fruits[i]);
+}
+
+// Here you can also show the difference between starting a loop from 0 and 1

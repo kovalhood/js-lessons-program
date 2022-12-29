@@ -7,3 +7,12 @@
 
 // const names = 'Jacob,William,Solomon,Artemis';
 // const phones = '89001234567,89001112233,890055566377,890055566300';
+
+const names = 'Jacob,William,Solomon,Kate';
+const phones = '38001234567,38001112233,380055566377,38099912233';
+const arrNames = names.split(',');
+const arrPhones = phones.split(',')
+
+for (let i = 0; i < arrNames.length, i < arrPhones.length; i += 1) {
+    console.log(`Name: ${arrNames[i]}, Phone: ${arrPhones[i]}`);
+}
