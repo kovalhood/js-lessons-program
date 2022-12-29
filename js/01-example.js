@@ -1,34 +1,34 @@
-// Example 1 - Object Basics
-// Write a script that, for the user object, successively:
+// Example 1 - Destructuring
 
-// adds a mood field with value 'happy'
-// replaces the value hobby to 'skydiving'
-// replaces premium to false
-// prints the contents of the user object in key:value format using Object.keys() and for...of
+// Rewrite the function so that it takes one object of the parameter instead of a set of independent arguments.
 
-// const user = {
-//   name: 'Mango',
-//   age: 20,
-//   hobby: 'html',
-//   premium: true,
-// };
+// function calcBMI(weight, height) {
+//   const numericWeight = Number(weight.replace(',', '.'));
+//   const numericHeight = Number(height.replace(',', '.'));
+//   return Number((numericWeight / numericHeight ** 2).toFixed(1));
+// }
 
-const user = {
-    name: 'Mango',
-    age: 20,
-    hobby: 'html',
-    premium: true,
-};
+// // It was
+// // console.log(calcBMI('88,3', '1.75'));
+// // console.log(calcBMI('68,3', '1.65'));
+// // console.log(calcBMI('118,3', '1.95'));
 
-user.mood = 'happy';
-user.hobby = 'skydiving';
-user['premium'] = false;
-
-const arr = Object.keys(user);
-
-for (const key of arr) {
-    console.log(`${key} - ${user[key]}`);
-}
-
-console.log(arr);
-console.log(user);
+// // Is expected 
+// console.log(
+//   calcBMI({
+//     weight: '88,3',
+//     height: '1.75',
+//   }),
+// );
+// console.log(
+//   calcBMI({
+//     weight: '68,3',
+//     height: '1.65',
+//   }),
+// );
+// console.log(
+//   calcBMI({
+//     weight: '118,3',
+//     height: '1.95',
+//   }),
+// );

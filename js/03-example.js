@@ -1,34 +1,21 @@
-// Example 3 - Array of objects
+// Example 3 - Deep destructuring
 
-// Write a function calcTotalPrice(stones, stoneName) that takes an array of objects and a string with the name of the stone. 
-// The function calculates and returns the total cost of stones with the same name, price and quantity from the object
+// Rewrite the property so that it uses one object's parameter instead of a set of independent arguments.
 
-// const stones = [
-//   { name: 'Emerald', price: 1300, quantity: 4 },
-//   { name: 'Diamond', price: 2700, quantity: 3 },
-//   { name: 'Sapphire', price: 400, quantity: 7 },
-//   { name: 'Rubble', price: 200, quantity: 2 },
-// ];
+// function getBotReport(companyName, repairBots, defenceBots) {
+//   return `${companyName} has ${repairBots + defenceBots} bots in stock`;
+// }
 
-const stones = [
-    { name: 'Emerald', price: 1300, quantity: 4 },
-    { name: 'Diamond', price: 2700, quantity: 3 },
-    { name: 'Sapphire', price: 400, quantity: 7 },
-    { name: 'Rubble', price: 200, quantity: 2 },
-];
+// // It was
+// // console.log(getBotReport('Cyberdyne Systems', 150, 50));
 
-const calcTotalPrice = function (stones, stoneName) {
-    let result;
-
-    for (const stone of stones) {
-        if (stone.name === stoneName) {
-        result = stone.price * stone.quantity
-        }
-    }
-
-    return result
-}
-
-let total = calcTotalPrice(stones, 'Diamond');
-let total2 = calcTotalPrice(stones, 'Sapphire');
-console.log(total, total2);
+// // Is expected 
+// console.log(
+//   getBotReport({
+//     companyName: 'Cyberdyne Systems',
+//     bots: {
+//       repair: 150,
+//       defence: 50,
+//     },
+//   }),
+// ); // "Cyberdyne Systems has 200 bots in stock"
