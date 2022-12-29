@@ -6,3 +6,11 @@
 // function getRectArea(dimensions) {}
 
 // console.log(getRectArea('8 11'));
+
+function getRectArea(dimensions = "") {
+  const data = dimensions.split(" "); // ["8", "11"]
+
+  return data[0] * data[1];
+}
+
+console.log(getRectArea("8 11"));
