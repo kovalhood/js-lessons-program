@@ -1,21 +1,10 @@
-// Example 2 - Smaller of numbers
+// Example 2 - Object.values() method
 
-// Write a function min(a,b) that returns the smaller of the numbers a and b.
+// We have an object that stores our team salaries.Write code for summing all salaries and store the result in the sum variable.
+// Should get 390. If the salaries object is empty, then the result should be 0.
 
-// console.log(min(2, 5)); // 2
-// console.log(min(3, -1)); // -1
-// console.log(min(1, 1)); // 1
-
-const min = function (a, b) {
-
-    if (a < b) return a
-    else return b
-
-    // return a < b ? a : b
-
-    // return Math.min(a, b)
-};
-
-console.log(min(2, 5)); // 2
-console.log(min(3, -1)); // -1
-console.log(min(1, 1)); // 1
+// const salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130,
+// };

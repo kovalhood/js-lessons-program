@@ -1,16 +1,11 @@
-// Example 3 - Area of a rectangle
+// Example 3 - Array of objects
 
-// Write a function getRectArea(dimensions) to calculate the area of a rectangle with sides,
-// the values of which will be passed to the dimensions parameter as a string.Values are guaranteed to be separated by a space.
+// Write a function calcTotalPrice(stones, stoneName) that takes an array of objects and a string with the name of the stone. 
+// The function calculates and returns the total cost of stones with the same name, price and quantity from the object
 
-// function getRectArea(dimensions) {}
-
-// console.log(getRectArea('8 11'));
-
-function getRectArea(dimensions = "") {
-  const data = dimensions.split(" "); // ["8", "11"]
-
-  return data[0] * data[1];
-}
-
-console.log(getRectArea("8 11"));
+// const stones = [
+//   { name: 'Emerald', price: 1300, quantity: 4 },
+//   { name: 'Diamond', price: 2700, quantity: 3 },
+//   { name: 'Sapphire', price: 400, quantity: 7 },
+//   { name: 'Rubble', price: 200, quantity: 2 },
+// ];
