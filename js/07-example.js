@@ -1,8 +1,5 @@
-// Example 7 - Link formatting (ternary operator)
-// Make code refactoring of the task number 4 code using ternary operator.
+// Example 7 - Sorting an array with a loop
 
-// let link = 'https://somesite.com/about';
-// if (link.includes('my-site') && !link.endsWith('/')) {
-//   link += '/';
-// }
-// console.log(link);
+// Write a script to sort an array of strings alphabetically by the first letter of an element.
+
+// const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby'];

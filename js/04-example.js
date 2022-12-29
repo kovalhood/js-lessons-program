@@ -1,25 +1,9 @@
-// Example 4 - Nested branches
-// Write a script that compares the numbers in variables a and b. If both values greater than 100, 
-// then print the maximum of them to the console.Otherwise, the console should show the sum of the value b and the number 512.
+// Example 4 - Arrays and Loops
 
-// const a = 120;
-// const b = 180;
+// Write a script that prints the user's name and phone number to the console. 
+// The names and phones variables store strings of names and phone numbers, separated by commas.
+// The sequence number of names and phone numbers in the lines indicates a match.
+// The number of names and phone numbers is guaranteed to be the same.
 
-const a = 120;
-const b = 180;
-
-if (a > 100 && b > 100) {
-    console.log(Math.max(a, b));
-} else {
-    console.log(b + 512);
-}
-
-// if (a > 100 && b > 100) {
-//     if (a > b) {
-//         console.log(a);
-//     } else {
-//         console.log(b)
-//     }
-// } else {
-//     console.log(b + 512);
-// }
+// const names = 'Jacob,William,Solomon,Artemis';
+// const phones = '89001234567,89001112233,890055566377,890055566300';

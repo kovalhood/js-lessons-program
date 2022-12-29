@@ -1,12 +1,10 @@
-// Example 1 - User Input and Branching
-// Using the if..else and prompt constructs, write code that will ask: "What is the official name of JavaScript?". 
-// If the user enters ECMAScript, then show an alert with the string "Correct!", otherwise - "Do not know? ECMAScript!"
+// Example 1 - Basic operations with an array
 
-const answer = prompt("What is the official name of JavaScript?");
-const rightAnswer = "ecmascript";
+// Create an array genres with elements "Jazz" and "Blues".
+// Add "Rock and Roll" to the end.
+// Print the first element of the array to the console.
+// Print the last element of the array to the console. The code should work for an array random length.
+// Remove the first element and print it to the console.
+// Insert "Country" and "Reggae" at the beginning of the array.
 
-if (answer === rightAnswer) {
-    alert("Correct!");
-} else {
-    alert(`Do not know? ${rightAnswer}!`);
-};
+// const genres = ;

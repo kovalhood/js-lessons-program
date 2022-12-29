@@ -1,10 +1,7 @@
-// Example 8 - if...else and logical operators
-// Write a script that will output a string to the browser console depending on hours variable values.
+// Example 8 - Search for an element
+    
+// Write a script to find the smallest number in an array. The code should work for any array of numbers. Use a loop to solve problems.
 
-// If the value of the variable hours:
-
-// less than 17, output the string "Pending"
-// greater than or equal to 17 and less than or equal to 24, output the string "Expires"
-// greater than 24 , output the string "Overdue"
-
-// const hours = 10;
+// const numbers = [2, 17, 94, 1, 23, 37];
+// let min;
+// console.log(min); // 1
