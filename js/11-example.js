@@ -18,7 +18,7 @@ const cars = [
     { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
 ];
 
-// Sort form
+// Short form
 // const getModelsOnSale = cars => cars.filter(car => car.onSale).map(car => car.model);
 
 // Full form

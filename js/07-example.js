@@ -19,7 +19,7 @@ const cars = [
 ];
 
 // Short form
-// const sortByAscendingAmount = cars => [...cars].sort((a,b) => b.amount - a.amount)
+// const sortByAscendingAmount = cars => [...cars].sort((a,b) => a.amount - b.amount)
 
 // Full form
 const sortByAscendingAmount = cars => {
