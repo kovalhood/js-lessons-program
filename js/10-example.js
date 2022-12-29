@@ -17,3 +17,19 @@ const cars = [
     { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
     { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
 ];
+
+// Short form
+// const getTotalAmount = cars => cars.reduce((total, car) => total += car.amount, 0)
+
+// Full form
+const getTotalAmount = cars => {
+    const total = cars.reduce((total, car) => {
+        total += car.amount;
+        
+        return total;
+    }, 0)
+
+    return total;
+};
+
+console.log('Total',getTotalAmount(cars))

@@ -17,3 +17,22 @@ const cars = [
     { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
     { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
 ];
+
+// Short form
+// const sortByAscendingAmount = cars => [...cars].sort((a,b) => b.amount - a.amount)
+
+// Full form
+const sortByAscendingAmount = cars => {
+    const sortedCars = [...cars];
+
+    sortedCars.sort((a, b) => {
+        if (a.amount > b.amount) return 1;
+        return -1;
+    });
+
+    return sortedCars;
+};
+
+
+const sortedByAmountCars = sortByAscendingAmount(cars);
+console.table(sortedByAmountCars);

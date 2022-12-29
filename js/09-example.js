@@ -19,3 +19,42 @@ const cars = [
     { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
     { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
 ];
+
+const sortByModel = (cars, order) => {
+    const sortedCars = [...cars];
+
+    // Short form of sort
+    if (order === 'asc') {
+        sortedCars.sort((a, b) => a.model > b.model ? 1 : -1)
+    } else if(order === 'desc') {
+        sortedCars.sort((a, b) => a.model < b.model ? 1 : -1)
+    }
+    
+    // OR full form of sort
+    
+    if (order === 'asc') {
+        sortedCars.sort((a, b) => {
+        if (a.model > b.model) {
+            return 1;
+        }
+        
+            return -1;
+        })
+    } else if (order === 'desc') {
+        sortedCars.sort((a, b) => {
+        if (a.model < b.model) {
+            return 1;
+        }
+
+            return -1;
+        })
+    }
+
+    return sortedCars;
+};
+
+const cars1 = sortByModel(cars, 'asc');
+const cars2 = sortByModel(cars, 'desc');
+
+console.log(cars1);
+console.log(cars2);

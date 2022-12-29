@@ -17,3 +17,9 @@ const cars = [
     { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
     { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
 ];
+
+// Same task as previous one, just sort by price form bigger to smaller
+const sortByDescendingPrice = cars => [...cars].sort((a ,b) => b.price - a.price );
+
+const sortedByPrice = sortByDescendingPrice(cars);
+console.table(sortedByPrice);

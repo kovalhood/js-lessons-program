@@ -18,3 +18,22 @@ const cars = [
     { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
     { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
 ];
+
+// Short form
+// const filterByPrice = (cars, threshold) => cars.filter(({price}) => price < threshold)
+
+// Full form
+const filterByPrice = (cars, threshold) => {
+    const filteredCars = cars.filter((car) => {
+        if (car.price < threshold) {
+            return true;
+        }
+
+        return false;
+    });
+
+    return filteredCars;
+};
+
+const filteredByPrice = filterByPrice(cars, 30000);
+console.table(filteredByPrice);

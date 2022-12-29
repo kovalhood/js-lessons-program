@@ -16,3 +16,20 @@ const cars = [
     { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
     { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
 ];
+
+// Short form
+// const getCarByModel = (cars, model => cars.find(({model: carModel}) => carModel === model))
+
+// Full form
+const getCarByModel = (cars, model) => {
+    const foundCar = cars.find(car => {
+        if(car.model === model) {
+        return true
+        }
+    })
+
+    return foundCar;
+};
+
+const foundCarByModel = getCarByModel(cars, 'F-150');
+console.log(foundCarByModel);

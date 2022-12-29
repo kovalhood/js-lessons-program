@@ -17,3 +17,22 @@ const cars = [
     { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
     { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
 ];
+
+// Short form
+// const getModels = cars => cars.map(car => car.model) 
+
+// Full form
+const getModels = cars => {
+    const models = cars.map((element, index, array) => {
+          console.log(element)
+          console.log(index)
+          console.log(array)
+          
+          return element.model;
+    })
+
+    return models;
+}
+
+const allModels = getModels(cars);
+console.table(allModels);

@@ -17,3 +17,21 @@ const cars = [
     { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
     { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
 ];
+
+// Sort form
+// const getModelsOnSale = cars => cars.filter(car => car.onSale).map(car => car.model);
+
+// Full form
+const getModelsOnSale = (cars) => {
+    const carsOnSale = cars.filter( car => {
+        return car.onSale;
+    })
+
+    const carModels = carsOnSale.map(car => {
+        return car.model;
+    });
+
+    return carModels;
+}
+
+console.table(getModelsOnSale(cars));

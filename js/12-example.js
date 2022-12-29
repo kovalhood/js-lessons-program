@@ -17,3 +17,17 @@ const cars = [
     { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
     { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
 ];
+
+// Short form
+// const getSortedCarsOnSale = cars => cars.filter(car => car.onSale).sort((a, b) => a.price - b.price)
+
+// Full form
+const getSortedCarsOnSale = cars => {
+    const carsOnSale = cars.filter( car => {
+        return car.onSale;
+    })
+
+    return carsOnSale.sort((a, b) => a.price - b.price);
+}
+
+console.table(getSortedCarsOnSale(cars));

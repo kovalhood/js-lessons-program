@@ -19,3 +19,24 @@ const cars = [
     { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
     { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
 ];
+
+// Short form
+// const makeCarsWithDiscount = (cars, discount) => cars.map(car => ({
+//   ...car,
+//   price: car.price - (car.price * discount) 
+// }))
+
+// Full form
+const makeCarsWithDiscount = (cars, discount) => {
+  const carsWithDiscount = cars.map(car => {
+    return {
+      ...car,
+      price: car.price - (car.price * discount) 
+    }
+  });
+
+  return carsWithDiscount;
+};
+
+const carsDiscount = makeCarsWithDiscount(cars, 0.2);
+console.table(carsDiscount)
