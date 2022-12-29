@@ -1,34 +1,23 @@
-// Example 1 - Destructuring
+// Example 1 - Function callback
 
-// Rewrite the function so that it takes one object of the parameter instead of a set of independent arguments.
+// Write the following functions:
+// createProduct(obj, callback) - accepts a product object without an id, and also callback. The function creates a product object by adding a unique identifier to it in property id and calls the callback passing it the created object.
+// logProduct(product) - callback accepting a product object and logging it to console
+// logTotalPrice(product) - callback receiving product object and logging the total value of the item in the console
 
-// function calcBMI(weight, height) {
-//   const numericWeight = Number(weight.replace(',', '.'));
-//   const numericHeight = Number(height.replace(',', '.'));
-//   return Number((numericWeight / numericHeight ** 2).toFixed(1));
+// // Solution
+// function createProduct(partialProduct, callback) {
+//   const product = { id: Date.now(), ...partialProduct };
+//   callback(product);
 // }
 
-// // It was
-// // console.log(calcBMI('88,3', '1.75'));
-// // console.log(calcBMI('68,3', '1.65'));
-// // console.log(calcBMI('118,3', '1.95'));
+// function logProduct(product) {
+//   console.log(product);
+// }
 
-// // Is expected 
-// console.log(
-//   calcBMI({
-//     weight: '88,3',
-//     height: '1.75',
-//   }),
-// );
-// console.log(
-//   calcBMI({
-//     weight: '68,3',
-//     height: '1.65',
-//   }),
-// );
-// console.log(
-//   calcBMI({
-//     weight: '118,3',
-//     height: '1.95',
-//   }),
-// );
+// function logTotalPrice(product) {
+//   console.log(product.price * product.quantity);
+// }
+
+// createProduct({ name: '🍎', price: 30, quantity: 3 }, logProduct);
+// createProduct({ name: '🍋', price: 20, quantity: 5 }, logTotalPrice);
