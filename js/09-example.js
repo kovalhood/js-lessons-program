@@ -8,3 +8,9 @@
 // const defaultValue = 10;
 // const value = incomingValue || defaultValue;
 // console.log(value);
+
+const incomingValue = 5;
+const defaultValue = 10;
+
+const coalescingValue = incomingValue ?? defaultValue;
+console.log("coalescingValue = ", coalescingValue);
