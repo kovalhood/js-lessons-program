@@ -2,8 +2,8 @@
 
 // Rewrite the property so that it uses one object's parameter instead of a set of independent arguments.
 
-// function getBotReport(companyName, repairBots, defenceBots) {
-//   return `${companyName} has ${repairBots + defenceBots} bots in stock`;
+// function getBotReport(companyName, repairBots, defenseBots) {
+//   return `${companyName} has ${repairBots + defenseBots} bots in stock`;
 // }
 
 // // It was
@@ -15,7 +15,7 @@
 //     companyName: 'Cyberdyne Systems',
 //     bots: {
 //       repair: 150,
-//       defence: 50,
+//       defense: 50,
 //     },
 //   }),
 // ); // "Cyberdyne Systems has 200 bots in stock"
