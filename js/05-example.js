@@ -1,30 +1,12 @@
-// Example 5 - Arrays and Strings
+// Example 5 - Contact logging
 
-// Write a script that prints to the console all the words of a string except the first and the last one.
-// The resulting string must not start or end whitespace character.The script should work for any line.
+// Write a function printContactsInfo(names, phones) that prints to the console the name and the user's phone number. 
+// The names and phones parameters will be passed strings of names and phone numbers separated by commas.
+// Sequence number of names and phone numbers in the rows indicate a match.Number of names and phones guaranteed to be the same.
 
-// const string = 'Welcome to the future';
+// function printContactsInfo(names, phones) {}
 
-// const string = 'Welcome to the future';
-// const words = string.split(' ');
-// console.log(words);
-// words.shift();
-// console.log(words);
-// words.pop();
-// console.log(words);
-// const str = words.join(' ');
-// console.log(str);
-
-// const string = 'Welcome to the future';
-// const words = string.split(' ');
-// console.log(words);
-// console.log(words.slice(1,3).join(' '));
-// console.log(words);
-
-
-// const string = 'Welcome to the future';
-// const words = string.split(' ');
-// console.log(words);
-// words.splice(0,1);
-// words.splice(words.length -1,1); // console.log(words.splice(-1,1));
-// console.log(words);
+// printContactsInfo(
+//   'Jacob,William,Solomon,Artemis',
+//   '89001234567,89001112233,890055566377,890055566300',
+// );

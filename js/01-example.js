@@ -1,31 +1,12 @@
-// Example 1 - Basic operations with an array
+// Example 1 - Body mass index
 
-// Create an array genres with elements "Jazz" and "Blues".
-// Add "Rock and Roll" to the end.
-// Print the first element of the array to the console.
-// Print the last element of the array to the console. The code should work for an array random length.
-// Remove the first element and print it to the console.
-// Insert "Country" and "Reggae" at the beginning of the array.
+// Write a function calcBMI(weight, height) that calculates and returns the body mass index of a person. 
+// To do this, divide the weight in kilograms by square of a person's height in meters.
 
-// const genres = ;
+// The weight and height will be specially passed as strings.
+// Non - integer numbers can be specified as 24.7 or 24.7, i.e.a comma can be used as a decimal separator.
 
-// const genres = ['Jazz', 'Blues'];
-// console.log(genres[genres.length]);
+// Body mass index must be rounded to one decimal place;
 
-// genres.push("Rock'n'roll");
-
-// const firstEl = genres[0]
-// console.log(firstEl);
-
-// const lastEl = genres[genres.length - 1]
-// console.log(lastEl);
-
-// const deleteFirstE = genres.shift();
-// console.log(deleteFirstE);
-// console.log(genres);
-
-// genres.unshift('Country', 'Reggae');
-// console.log(genres);
-// genres.splice(-2 , 1, 'Country')
-
-// console.log(genres);
+// const bmi = calcBMI('88,3', '1.75');
+// console.log(bmi); // 28.8

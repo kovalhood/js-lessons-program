@@ -1,14 +1,8 @@
-// Example 3 - Array iteration
+// Example 3 - Area of a rectangle
 
-// Write a script to iterate over the fruits array with a for loop.
-// For each array element print a string in the format element_number: element_value to the console.
-// Element numbering must start from 1.
+// Write a function getRectArea(dimensions) to calculate the area of a rectangle with sides,
+// the values of which will be passed to the dimensions parameter as a string.Values are guaranteed to be separated by a space.
 
-// const fruits = ['🍎', '🍇', '🍑', '🍌', '🍋'];
+// function getRectArea(dimensions) {}
 
-for (let i = 0, num = 1; i < fruits.length; i += 1, num += 1) {
-    console.log(`Number ${i+1}`, fruits[i]);
-    console.log(`Number ${num}`, fruits[i]);
-}
-
-// Here you can also show the difference between starting a loop from 0 and 1
+// console.log(getRectArea('8 11'));

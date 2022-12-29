@@ -1,25 +1,19 @@
-// Example 8 - Search for an element
-    
-// Write a script to find the smallest number in an array. The code should work for any array of numbers. Use a loop to solve problems.
+// Example 8 - Time Formatting
 
-// const numbers = [2, 17, 94, 1, 23, 37];
-// let min;
-// console.log(min); // 1
+// Write a function formatTime(minutes) that will translate the value of minutes(number of minutes) 
+// to a string in hour and minute format HH: MM.
 
-const numbers = [2, 17, 94, 1, 23, 37];
-let min = numbers[0];
-let count = 0;
+// const hours = Math.floor(totalMinutes / 60);
+// const minutes = totalMinutes % 60;
+// console.log(hours);
+// console.log(minutes);
 
-// for (const number of numbers) {
-// 	if (min > number) {
-// 		min = number;
-// 	}
-// }
+// const doubleDigitHours = String(hours).padStart(2, 0);
+// const doubleDigitMinutes = String(minutes).padStart(2, 0);
+// console.log(`${doubleDigitHours}:${doubleDigitMinutes}`);
 
-// for (let i = 1; i < numbers.length; i += 1) {
-// 	if (min > numbers[i]) {
-// 		min = numbers[i];
-// 	}
-// }
+// function formatTime(minutes) {}
 
-console.log(min); // 1
+// console.log(formatTime(70)); // "01:10"
+// console.log(formatTime(450)); // "07:30"
+// console.log(formatTime(1441)); // "24:01"

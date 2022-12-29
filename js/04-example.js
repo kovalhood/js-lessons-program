@@ -1,18 +1,11 @@
-// Example 4 - Arrays and Loops
+// Example 4 - Element logging
 
-// Write a script that prints the user's name and phone number to the console. 
-// The names and phones variables store strings of names and phone numbers, separated by commas.
-// The sequence number of names and phone numbers in the lines indicates a match.
-// The number of names and phone numbers is guaranteed to be the same.
+// Write a function logItems(items) that takes an array and uses a for loop that for each element of the array 
+// will print a message to the console in the format < item number > - <item value >.The numbering of elements should start with 1.
 
-// const names = 'Jacob,William,Solomon,Artemis';
-// const phones = '89001234567,89001112233,890055566377,890055566300';
+// For example, for the first element of the array ['Mango', 'Poly', 'Ajax'] with index 0 will print 1 - Mango and for index 2 will print 3 - Ajax.
 
-const names = 'Jacob,William,Solomon,Kate';
-const phones = '38001234567,38001112233,380055566377,38099912233';
-const arrNames = names.split(',');
-const arrPhones = phones.split(',')
+// function logItems(items) {}
 
-for (let i = 0; i < arrNames.length, i < arrPhones.length; i += 1) {
-    console.log(`Name: ${arrNames[i]}, Phone: ${arrPhones[i]}`);
-}
+// logItems(['Mango', 'Poly', 'Ajax']);
+// logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);

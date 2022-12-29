@@ -1,11 +1,8 @@
-// Example 6 - Arrays and Strings
-// Write a script that "unwraps" a string (reverse letter order) and prints it to the console.
+// Example 6 - Finding the largest element
 
-// const string = 'Welcome to the future';
+// Write a function findLargestNumber(numbers) that looks for the largest number in array.
 
-const string = 'Welcome to the future';
-// const arr = string.split('');
-// const rev = arr.reverse();
-// const result = rev.join('');
-const result = string.split('').reverse().join('');
-console.log(result);
+// function findLargestNumber(numbers) {}
+
+// console.log(findLargestNumber([2, 17, 94, 1, 23, 37])); // 94
+// console.log(findLargestNumber([49, 4, 7, 83, 12])); // 83
