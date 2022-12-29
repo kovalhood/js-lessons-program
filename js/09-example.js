@@ -1,35 +1,21 @@
-// Example 9 - forEach method
+// Example 9 - Sort method
 
-// Make the code refactoring using forEach method and arrow functions.
+// Let the sortByModel function return a new array of cars sorted by model name in alphabetical and reverse alphabetical order,
+// depending on the value of the order parameter.
 
-// function calсulateAverage(...args) {
-//   let total = 0;
-//   for (let i = 0; i < args.length; i++) {
-//     total += args[i];
-//   }
-//   return total / args.length;
-// }
+// const sortByModel = (cars, order) => {};
+// console.table(sortByModel(cars, 'asc'));
+// console.table(sortByModel(cars, 'desc'));
 
-// console.log(calсulateAverage(1, 2, 3, 4)); // 2.5
-// console.log(calсulateAverage(14, 8, 2)); // 8
-// console.log(calсulateAverage(27, 43, 2, 8, 36)); // 23.2
-
-// Expected result
-const calсulateAverage = (...args) => {
-
-    let total = 0;
-    // for (let i = 0; i < args.length; i++) {
-    //   total += args[i];
-    // }
-    console.log(args);
-    args.forEach(el => total += el)
-    return total / args.length;
-}
-
-console.log(calсulateAverage(1, 2, 3, 4)); // 2.5
-console.log(calсulateAverage(14, 8, 2)); // 8
-console.log(calсulateAverage(27, 43, 2, 8, 36)); // 23.2
-
-const numbers = [1, 2, 3, 4, 5];
-const filteredNumbers = numbers.filter(value => value > 3);
-console.log(filteredNumbers); // [4, 5]
+const cars = [
+    { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
+    { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
+    { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
+    { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
+    { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
+    { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
+    { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
+    { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
+    { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
+    { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
+];

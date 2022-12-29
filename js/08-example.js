@@ -1,35 +1,19 @@
-// Example 8 - forEach method
+// Example 8 - Sort method
 
-// Make the code refactoring using forEach method and arrow functions.
+// Let the sortByDescendingPrice function return a new array of cars sorted in descending order by the value of the price property.
 
-// function printContactsInfo({ names, phones }) {
-//   const nameList = names.split(',');
-//   const phoneList = phones.split(',');
-//   for (let i = 0; i < nameList.length; i += 1) {
-//     console.log(`${nameList[i]}: ${phoneList[i]}`);
-//   }
-// }
+// const sortByDescendingPrice = cars => {};
+// console.table(sortByDescendingPrice(cars));
 
-// printContactsInfo({
-//   names: 'Jacob,William,Solomon,Artemis',
-//   phones: '89001234567,89001112233,890055566377,890055566300',
-// });
-
-// Expected result
-const printContactsInfo = ({ names, phones }) => {
-    const nameList = names.split(',');
-    const phoneList = phones.split(',');
-
-    // for (let i = 0; i < nameList.length , i < phoneList.length; i+=1) {
-    //   console.log(`${nameList[i]}: ${phoneList[i]}`);
-    // }
-
-    nameList.forEach((el, idx)=>{
-        console.log(`${el} - ${phoneList[idx]}`);
-    })
-} 
-
-printContactsInfo({
-    names: 'Jacob,William,Solomon,Artem',
-    phones: '89001234567,89001112233,890055566377',
-});
+const cars = [
+    { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
+    { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
+    { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
+    { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
+    { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
+    { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
+    { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
+    { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
+    { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
+    { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
+];

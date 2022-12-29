@@ -1,40 +1,20 @@
-// Example 3 - Function callback
+// Example 3 -Filter method
 
-// Write a function each(array, callback) that takes as its first parameter array, and the second - a function
-//     that will be applied to each element of the array.The each function must return a new array whose elements 
-// will be the results of callback call.
+// Let the filterByPrice function return an array of cars whose price is less than the value of the threshold parameter.
 
+// const filterByPrice = (cars, threshold) => {};
+// console.table(filterByPrice(cars, 30000));
+// console.table(filterByPrice(cars, 25000));
 
-function each(array, callback) {
-    const newArr = [];
-    for (const el of array) {
-        newArr.push(callback(el));
-    }
-    return newArr;
-}
-
-console.log(
-    each([64, 49, 36, 25, 16], function (value) {
-        return value * 2;
-    }),
-);
-console.log(
-    each([64, 49, 36, 25, 16], function (value) {
-        return value - 10;
-    }),
-);
-console.log(
-    each([64, 49, 36, 25, 16], function (value) {
-        return Math.sqrt(value);
-    }),
-);
-console.log(
-    each([1.5, 2.1, 16.4, 9.7, 11.3], function (value) {
-        return Math.ceil(value);
-    }),
-);
-console.log(
-    each([1.5, 2.1, 16.4, 9.7, 11.3], function (value) {
-        return Math.floor(value);
-    }),
-);
+const cars = [
+    { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
+    { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
+    { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
+    { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
+    { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
+    { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
+    { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
+    { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
+    { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
+    { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
+];

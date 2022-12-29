@@ -1,45 +1,20 @@
-// Example 5 - Arrow functions
+// Example 5 - Filter method
 
-// Make the code refactoring using arrow functions.
+// Let the getCarsWithType function return an array of cars whose type coincide with the value of the type parameter.
 
-// const TRANSACTION_LIMIT = 1000;
+// const getCarsWithType = (cars, type) => {};
+// console.table(getCarsWithType(cars, 'suv'));
+// console.table(getCarsWithType(cars, 'sedan'));
 
-// const account = {
-//   username: 'Jacob',
-//   balance: 400,
-//   withdraw(amount, onSuccess, onError) {
-//     if (amount > TRANSACTION_LIMIT) {
-//       onError(`Amount should not exceed ${TRANSACTION_LIMIT} credits`);
-//     } else if (amount > this.balance) {
-//       onError(`Amount can't exceed account balance of ${this.balance} credits`);
-//     } else {
-//       this.balance -= amount;
-//       onSuccess(`Account balance: ${this.balance}`);
-//     }
-//   },
-//   deposit(amount, onSuccess, onError) {
-//     if (amount > TRANSACTION_LIMIT) {
-//       onError(`Amount should not exceed ${TRANSACTION_LIMIT} credits`);
-//     } else if (amount <= 0) {
-//       onError(`Amount must be more than 0 credits`);
-//     } else {
-//       this.balance += amount;
-//       onSuccess(`Account balance: ${this.balance}`);
-//     }
-//   },
-// };
-
-// function handleSuccess(message) {
-//   console.log(`✅ Success! ${message}`);
-// }
-// function handleError(message) {
-//   console.log(`❌ Error! ${message}`);
-// }
-
-// account.withdraw(2000, handleSuccess, handleError);
-// account.withdraw(600, handleSuccess, handleError);
-// account.withdraw(300, handleSuccess, handleError);
-// account.deposit(1700, handleSuccess, handleError);
-// account.deposit(0, handleSuccess, handleError);
-// account.deposit(-600, handleSuccess, handleError);
-// account.deposit(600, handleSuccess, handleError);
+const cars = [
+    { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
+    { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
+    { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
+    { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
+    { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
+    { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
+    { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
+    { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
+    { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
+    { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
+];

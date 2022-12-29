@@ -1,9 +1,9 @@
-// Example 4 - Filter method
+// Example 11 - Method chains
 
-// Let the getCarsWithDiscount function return an array of cars whose onSale property is true.
+// Let the getAvailableCarNames function return an array of car models, but only those that are currently for sale.
 
-// const getCarsWithDiscount = cars => {};
-// console.table(getCarsWithDiscount(cars));
+// const getModelsOnSale = cars => {};
+// console.table(getModelsOnSale(cars));
 
 const cars = [
     { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },

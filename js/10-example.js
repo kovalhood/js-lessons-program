@@ -1,9 +1,9 @@
-// Example 4 - Filter method
+// Example 10 - Reduce method
 
-// Let the getCarsWithDiscount function return an array of cars whose onSale property is true.
+// Let the getTotalAmount function return the total number of cars (the value of the amount properties).
 
-// const getCarsWithDiscount = cars => {};
-// console.table(getCarsWithDiscount(cars));
+// const getTotalAmount = cars => {};
+// console.log(getTotalAmount(cars));
 
 const cars = [
     { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
