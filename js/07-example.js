@@ -6,3 +6,9 @@
 //   link += '/';
 // }
 // console.log(link);
+
+let link = 'https://my-site.com/about';
+
+link.includes('my-site') && !link.endsWith('/') ? link += '/' : null;
+
+console.log(link);
