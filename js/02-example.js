@@ -8,3 +8,18 @@
 //   Ann: 160,
 //   Pete: 130,
 // };
+
+const salaries = {
+    John: 100,
+    Ann: 160,
+    Pete: 130,
+};
+
+const salariesValues = Object.values(salaries);
+let salarySum = 0;
+
+for (const value of salariesValues) {
+    salarySum += value  
+}
+
+console.log(salarySum)

@@ -12,3 +12,23 @@
 //   hobby: 'html',
 //   premium: true,
 // };
+
+const user = {
+    name: 'Mango',
+    age: 20,
+    hobby: 'html',
+    premium: true,
+};
+
+user.mood = 'happy';
+user.hobby = 'skydiving';
+user['premium'] = false;
+
+const arr = Object.keys(user);
+
+for (const key of arr) {
+    console.log(`${key} - ${user[key]}`);
+}
+
+console.log(arr);
+console.log(user);
