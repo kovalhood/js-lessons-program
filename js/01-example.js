@@ -12,22 +12,22 @@
 
 // Add the updatePostCount(value) method, which in the value parameter takes number of posts to add to the user.
 
-// class Blogger {
-//     constructor({name,age,numberOfPosts,topics}){
-//       this.name = name;
-//       this.age= age;
-//       this.numberOfPosts = numberOfPosts;
-//       this.topics = topics;
-//     }
+class Blogger {
+    constructor({name,age,numberOfPosts,topics}){
+      this.name = name;
+      this.age= age;
+      this.numberOfPosts = numberOfPosts;
+      this.topics = topics;
+    }
 
-//     getInfo(){
-//         return `User ${this.name} is ${this.age} years old and has ${this.numberOfPosts} posts`
-//     }
+    getInfo(){
+        return `User ${this.name} is ${this.age} years old and has ${this.numberOfPosts} posts`
+    }
 
-//     updatePostCount(value){
-//         this.numberOfPosts += value;
-//     }
-// }
+    updatePostCount(value){
+        this.numberOfPosts += value;
+    }
+}
 
 // const mango = new Blogger({
 //     name: 'mango@mail.com',
