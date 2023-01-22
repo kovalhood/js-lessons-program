@@ -1,38 +1,19 @@
-// Example 1 - Map method
+// Example 1 - Jewelry workshop
 
-// Let the getModels function return an array of models (model field) of all cars.
+// Write a calcTotalPrice(stoneName) method that takes the name of a stone, calculates and returns the total cost 
+// of stones with that name, price, and quantity from the stones property.
 
-// const getModels = cars => {};
-// console.table(getModels(cars));
+// const chopShop = {
+//   stones: [
+//     { name: 'Emerald', price: 1300, quantity: 4 },
+//     { name: 'Diamond', price: 2700, quantity: 3 },
+//     { name: 'Sapphire', price: 1400, quantity: 7 },
+//     { name: 'Ruby', price: 800, quantity: 2 },
+//   ],
+//   calcTotalPrice(stoneName) {},
+// };
 
-const cars = [
-    { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
-    { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
-    { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
-    { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
-    { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
-    { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
-    { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
-    { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
-    { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
-    { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false }
-];
-
-// Short form
-// const getModels = cars => cars.map(car => car.model) 
-
-// Full form
-const getModels = cars => {
-    const models = cars.map((element, index, array) => {
-          console.log(element)
-          console.log(index)
-          console.log(array)
-          
-          return element.model;
-    })
-
-    return models;
-}
-
-const allModels = getModels(cars);
-console.table(allModels);
+// console.log(chopShop.calcTotalPrice('Emerald')); // 5200
+// console.log(chopShop.calcTotalPrice('Diamond')); // 8100
+// console.log(chopShop.calcTotalPrice('Sapphire')); // 9800
+// console.log(chopShop.calcTotalPrice('Ruby')); // 1600
