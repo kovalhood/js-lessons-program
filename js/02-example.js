@@ -1,56 +1,19 @@
-// Example 2 - Phone book
+// Example 2 - Storagе
 
-// Make methods refactoring of the phonebook object to make the code work.
+// Write a Storage class that creates objects for managing a warehouse of goods. When called, it will receive one argument - the initial array of goods, and write it to the items property.
 
-// const phonebook = {
-//   contacts: [],
-//   add(contact) {
-//     const newContact = {
-//       list: 'default',
-//       ...contact,
-//       id: generateId(),
-//       createdAt: getDate(),
-//     };
-//     contacts.push(newContact);
-//   },
-//   generateId() {
-//     return '_' + Math.random().toString(36).substr(2, 9);
-//   },
-//   getDate() {
-//     return Date.now();
-//   },
-// };
+// Add class methods:
 
-const phonebook = {
-  contacts: [],
-  add(contact) {
-    const newContact = {
-      list: "default",
-      ...contact,
-      id: this.generateId(),
-      createdAt: this.getDate(),
-    };
-    this.contacts.push(newContact);
-    return this.contacts;
-  },
-  generateId() {
-    return "_" + Math.random().toString(36).substr(2, 9);
-  },
-  getDate() {
-    return Date.now();
-  },
-};
+// getItems() - returns an array of products.
+// addItem(item) - receives a new product and adds it to the current ones.
+// removeItem(item) - receives the product and, if it exists, removes it from the current.
+// const storage = new Storage(['🍎', '🍋', '🍇', '🍑']);
 
-// console.log(
-//   phonebook.add({
-//     name: 'Mango',
-//     email: 'mango@mail.com',
-//     list: 'friends',
-//   }),
-// );
-// console.log(
-//   phonebook.add({
-//     name: 'Poly',
-//     email: 'poly@hotmail.com',
-//   }),
-// );
+// const items = storage.getItems();
+// console.table(items); // [ '🍎', '🍋', '🍇', '🍑' ]
+
+// storage.addItem('🍌');
+// console.table(storage.items); // [ '🍎', '🍋', '🍇', '🍑', '🍌' ]
+
+// storage.removeItem('🍋');
+// console.table(storage.items); // [ '🍎', '🍇', '🍑', '🍌' ]
