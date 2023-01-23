@@ -1,96 +1,114 @@
-// const list = document.getElementById("list");
+// const text = document.querySelector("span + .text");
+// console.log("🚀 ~ text", text);
 
-// if (list) {
-//     console.log(list.children.length);
-// } else {
-//     console.log("this element doesn't exist");
-// }
+// text.classList.add("active");
 
-//! ====================================
+// const block = document.getElementById("block");
+// block.style.backgroundColor = "blue";
 
-//* 1. Create a list of technologies studied in the Fullstack course using js
-// Show how it is done with the help of **map** and **reduce**
+// const texts = document.getElementsByClassName("text");
+// texts[3].classList.add("active");
 
-// const container = document.getElementById("container");
-// const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
+// console.log(texts);
 
-/*
-    1. Create a container for ul tag
-    2. Create a cycle for sorting array elements
-    3. Create a li tag
-    4. Write the text from the array into the li tag
-    5. Place li inside of ul
-    6. Place ul tag with items on the page
-*/
+// const text1 = document.querySelector(".container .text:last-child");
+// console.log("🚀 ~ text1", text1)
 
-// const list = document.createElement("ul");
+// text1.style.backgroundColor = "pink";
 
-// for (const technology of technologies) {
-//     const liEl = document.createElement("li");
-//     liEl.textContent = technology;
-//     list.append(liEl);
-// }
+// const buttons = [...document.getElementsByTagName("button")];
 
-// container.append(list);
-
-//* map
-// const listContent = technologies
-//     .map((technology) => `<li>${technology}</li>`)
-//     .join("");
-
-// list.insertAdjacentHTML("beforeend", listContent);
-// list.innerHTML = listContent;
-
-// container.append(list);
-
-//* reduce
-
-// const listContent = technologies.reduce(
-//     (acc, technology) => (acc += `<li>${technology}</li>`),
-//     ""
-// );
-
-// list.insertAdjacentHTML("beforeend", listContent);
-
-// container.append(list);
-
-//! ====================================
-
-//* 2. Create several buttons based on an array of objects using createElement
-
-// const colors = [
-//   {
-//     label: "red",
-//     color: "#FF0000",
-//   },
-//   {
-//     label: "green",
-//     color: "#00FF00",
-//   },
-//   {
-//     label: "blue",
-//     color: "#0000FF",
-//   },
-//   {
-//     label: "yellow",
-//     color: "#FFFF00",
-//   },
-// ];
-
-/*
-    1. Iterate through the array of colors using a loop
-    2. Create a button
-    3. Set the background color of the button
-    4. Set the text of the button
-    5. Add a button to the document
-
-*/
-
-// colors.forEach(({ label, color }) => {
-//     const buttonEl = document.createElement("button");
-//     buttonEl.style.backgroundColor = color;
-//     buttonEl.classList.add("indents");
-//     buttonEl.style.margin = "5px"
-//     buttonEl.textContent = label;
-//     container.appendChild(buttonEl);
+// buttons.forEach((el) => {
+//   const status = el.dataset.active;
+//   if (status === "true") el.style.backgroundColor = "green";
+//   else el.style.backgroundColor = "red";
 // });
+
+// const showCT = document.getElementById("showCT");
+
+// showCT.addEventListener("click", (event) => {
+//   console.log(event);
+//   console.log(event.currentTarget)
+// });
+
+// const form = document.querySelector(".form");
+
+// form.addEventListener("submit", handleSubmit);
+
+// function handleSubmit(event) {
+//   event.preventDefault();
+
+//   console.dir(event.currentTarget.elements.login);
+
+//   const {
+//     elements: { login, password },
+//   } = event.currentTarget;
+
+//   if (login.value === " || password.value === ") {
+//     return console.log("Please fill in all the fields!");
+//   }
+
+//   console.log(`Login: ${login.value}, Password: ${password.value}`);
+//   event.currentTarget.reset();
+// }
+
+// const mango = {
+//   username: "Mango",
+//   showUsername() {
+//     console.log(this);
+//     console.log(`My username is: ${this.username}`);
+//   },
+// };
+
+// const btn = document.querySelector(".js-btn");
+
+// // ✅ It's working
+// mango.showUsername();
+
+// // ❌ this will refer to the button if you use showUsername as the callback
+// btn.addEventListener("click", mango.showUsername); // does not work
+
+// // ✅ Don't forget to bind the context of the object's methods
+// btn.addEventListener("click", mango.showUsername.bind(mango));
+
+// document.addEventListener("keydown", (event) => {
+//   console.log("Keydown: ", event);
+// });
+
+// const btn = document.querySelector(".js-btn");
+
+// btn.addEventListener("click", handleClick);
+
+// let counter = 0;
+
+// function handleClick(e) {
+//   counter++;
+//   console.log(counter);
+//   if (counter === 5) {
+//     btn.removeEventListener("click", handleClick);
+//   }
+// }
+
+//!========================================================
+
+const openModalBtn = document.getElementById("openModalBtn");
+const overlay = document.getElementById("overlay");
+const closeBtn = document.getElementById("closeBtn");
+const openClass = "open";
+
+openModalBtn.addEventListener("click", handleModalOpen);
+overlay.addEventListener("click", handleModalClose);
+closeBtn.addEventListener("click", handleModalClose);
+document.body.addEventListener("keydown", handleModalCloseOnESC);
+
+function handleModalCloseOnESC({ key }) {
+  // let key = event.key
+  if (key === "Escape") handleModalClose();
+}
+
+function handleModalOpen() {
+  document.body.classList.add(openClass);
+}
+function handleModalClose() {
+  document.body.classList.remove(openClass);
+}
