@@ -1,9 +1,9 @@
 // const list = document.getElementById("list");
 
 // if (list) {
-//   console.log(list.children.length);
+//     console.log(list.children.length);
 // } else {
-//   console.log("this element doesn't exist");
+//     console.log("this element doesn't exist");
 // }
 
 //! ====================================
@@ -26,49 +26,38 @@
 // const list = document.createElement("ul");
 
 // for (const technology of technologies) {
-//   const liEl = document.createElement("li");
-//   liEl.textContent = technology;
-//   list.append(liEl);
+//     const liEl = document.createElement("li");
+//     liEl.textContent = technology;
+//     list.append(liEl);
 // }
 
 // container.append(list);
 
 //* map
 // const listContent = technologies
-//   .map((technology) => `<li>${technology}</li>`)
-//   .join("");
+//     .map((technology) => `<li>${technology}</li>`)
+//     .join("");
 
 // list.insertAdjacentHTML("beforeend", listContent);
-// // list.innerHTML = listContent;
+// list.innerHTML = listContent;
 
 // container.append(list);
 
 //* reduce
 
 // const listContent = technologies.reduce(
-//   (acc, technology) => (acc += `<li>${technology}</li>`),
-//   ""
+//     (acc, technology) => (acc += `<li>${technology}</li>`),
+//     ""
 // );
 
 // list.insertAdjacentHTML("beforeend", listContent);
 
 // container.append(list);
 
-//* reduce 2
-
-// const listContent = technologies.reduce(
-//   (acc, technology) => (acc += `<li>${technology}</li>`),
-//   ""
-// );
-
-// const list = `<ul>${listContent}</ul>`;
-// container.insertAdjacentHTML("beforeend", list);
-
 //! ====================================
 
 //* 2. Create several buttons based on an array of objects using createElement
 
-// const container = document.getElementById("container");
 // const colors = [
 //   {
 //     label: "red",
@@ -98,10 +87,10 @@
 */
 
 // colors.forEach(({ label, color }) => {
-//   const buttonEl = document.createElement("button");
-//   buttonEl.style.backgroundColor = color;
-//   buttonEl.classList.add("indents");
-//   //   buttonEl.style.margin = "5px"
-//   buttonEl.textContent = label;
-//   container.appendChild(buttonEl);
+//     const buttonEl = document.createElement("button");
+//     buttonEl.style.backgroundColor = color;
+//     buttonEl.classList.add("indents");
+//     buttonEl.style.margin = "5px"
+//     buttonEl.textContent = label;
+//     container.appendChild(buttonEl);
 // });
