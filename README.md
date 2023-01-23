@@ -1,4 +1,4 @@
-# JS Module 5 Lesson 2
+# JS Module 6 Lesson 1
 
 - Introductions (timing 1 minutes)
 - Play Kahoot (timing 15-20 minutes)
