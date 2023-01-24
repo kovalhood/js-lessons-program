@@ -13,7 +13,6 @@ parentDiv.addEventListener("click", (e) => {
 
 childA.addEventListener("click", (e) => {
     e.stopPropagation();
-    // e.stopImmediatePropagation();
     e.preventDefault();
     alert("Child A");
 });
