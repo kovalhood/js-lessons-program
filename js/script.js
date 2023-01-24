@@ -1,113 +1,90 @@
-// const block = document.getElementById("block");
-// block.style.backgroundColor = "blue";
+// Emergence of events
+const parentDiv = document.getElementById("parentDiv");
+const childA = document.getElementById("childA");
 
-// const texts = document.getElementsByClassName("text");
-// texts[2].classList.add("active");
+document.body.addEventListener("click", (e) => {
+  e.preventDefault();
+  alert("body");
+});
 
-// console.log(texts);
+parentDiv.addEventListener("click", (e) => {
+  alert("Parent Div");
+});
 
-// const text1 = document.querySelector(".container .text:last-child");
-// console.log("🚀 ~ text1", text1)
+childA.addEventListener("click", (e) => {
+    e.stopPropagation();
+    // e.stopImmediatePropagation();
+    e.preventDefault();
+    alert("Child A");
+});
 
-// text1.style.backgroundColor = "green";
+//! ===================================================
 
-// const buttons = [...document.getElementsByTagName("button")];
-
-// buttons.forEach((el) => {
-//   const status = el.dataset.active;
-//   if (status === "true") el.style.backgroundColor = "green";
-//   else el.style.backgroundColor = "red";
-// });
-
-// const showCT = document.getElementById("showCT");
-
-// showCT.addEventListener("click", (event) => {
-//   console.log(event);
-//   console.log(event.currentTarget)
-// });
-
-//!========================================================
-
-// const form = document.querySelector(".form");
-
-// form.addEventListener("submit", handleSubmit);
-
-// function handleSubmit(event) {
-//   event.preventDefault();
-
-//   console.dir(event.currentTarget.elements.login);
-
-//   const {
-//     elements: { login, password },
-//   } = event.currentTarget;
-
-//   if (login.value === " || password.value === ") {
-//     return console.log("Please fill in all the fields!");
-//   }
-
-//   console.log(`Login: ${login.value}, Password: ${password.value}`);
-//   event.currentTarget.reset();
+// for (let elem of document.querySelectorAll("*")) {
+//   elem.addEventListener(
+//     "click",
+//     (e) => alert(`Diving: ${elem.tagName}`),
+//     true
+//   );
+//   elem.addEventListener("click", (e) => alert(`Emersion: ${elem.tagName}`));
 // }
 
-//!========================================================
+//!=============================================
 
-// const mango = {
-//   username: "Mango",
-//   showUsername() {
-//     console.log(this);
-//     console.log(`My username is: ${this.username}`);
+// Create a product cost calculator depending on the price. When working with events, use delegation. Render all markup via JS
+// When the data variable is entered in input #1 or #2, the total cost should be automatically recalculated
+// The currency - USD should always be displayed
+// The total amount is displayed with pennies (2 decimal places)
+// In the signature of the second input, there should be a color hint of how many pounds the user selected on the second input.
+// The color tooltip should change its value when the slider is dragged.
+// In input No. 2, set min and max threshold by yourself.
+// When loading the page, the script should automatically calculate the cost based on the default data that you set in the markup.
+
+// const data = {
+//   quantity: 0,
+//   price: 0,
+//   calcTotalPrice() {
+//     return (this.quantity * this.price).toFixed(2);
 //   },
 // };
 
-// const btn = document.querySelector(".js-btn");
+// //dom links
+// const mainForm = document.getElementById("form");
+// const priceInput = document.getElementById("price");
+// const quantityInput = document.getElementById("quantity");
+// const amount = document.getElementById("amount");
+// const total = document.getElementById("total");
 
-// // ✅ It's working
-// mango.showUsername();
+// //data fill
+// dataFill();
+// displayTotal();
 
-// // ❌ this will refer to the button if you use showUsername as the callback
-// btn.addEventListener("click", mango.showUsername); // does not work
+// //events
+// mainForm.addEventListener("change", handleFormChange);
 
-// // ✅ Don't forget to bind the context of the object's methods
-// btn.addEventListener("click", mango.showUsername.bind(mango));
+// //functions
+// function handleFormChange({ target }) {
+//   const { value } = target;
 
-// document.addEventListener("keydown", (event) => {
-//   console.log("Keydown: ", event);
-// });
-
-// const btn = document.querySelector(".js-btn");
-
-// btn.addEventListener("click", handleClick);
-
-// let counter = 0;
-
-// function handleClick(e) {
-//   counter++;
-//   console.log(counter);
-//   if (counter === 5) {
-//     btn.removeEventListener("click", handleClick);
+//   if (target === priceInput) {
+//     if (!Number(value)) {
+//       console.log("Not a number!");
+//       return;
+//     }
+//   } else if (target === quantityInput) {
+//     amount.textContent = value;
 //   }
+
+//   target.setAttribute("value", value);
+//   dataFill();
+//   displayTotal();
 // }
 
-//!========================================================
-
-// const openModalBtn = document.getElementById("openModalBtn");
-// const overlay = document.getElementById("overlay");
-// const closeBtn = document.getElementById("closeBtn");
-// const openClass = "open";
-
-// openModalBtn.addEventListener("click", handleModalOpen);
-// overlay.addEventListener("click", handleModalClose);
-// closeBtn.addEventListener("click", handleModalClose);
-// document.body.addEventListener("keydown", handleModalCloseOnESC);
-
-// function handleModalCloseOnESC({ key }) {
-//   // let key = event.key
-//   if (key === "Escape") handleModalClose();
+// function dataFill() {
+//   data.quantity = quantityInput.getAttribute("value");
+//   data.price = priceInput.getAttribute("value");
 // }
 
-// function handleModalOpen() {
-//   document.body.classList.add(openClass);
-// }
-// function handleModalClose() {
-//   document.body.classList.remove(openClass);
+// function displayTotal() {
+//   total.textContent = data.calcTotalPrice() + " USD";
 // }
