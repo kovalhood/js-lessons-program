@@ -3,12 +3,12 @@ const parentDiv = document.getElementById("parentDiv");
 const childA = document.getElementById("childA");
 
 document.body.addEventListener("click", (e) => {
-  e.preventDefault();
-  alert("body");
+    e.preventDefault();
+    alert("body");
 });
 
 parentDiv.addEventListener("click", (e) => {
-  alert("Parent Div");
+    alert("Parent Div");
 });
 
 childA.addEventListener("click", (e) => {
@@ -21,12 +21,12 @@ childA.addEventListener("click", (e) => {
 //! ===================================================
 
 // for (let elem of document.querySelectorAll("*")) {
-//   elem.addEventListener(
-//     "click",
-//     (e) => alert(`Diving: ${elem.tagName}`),
-//     true
-//   );
-//   elem.addEventListener("click", (e) => alert(`Emersion: ${elem.tagName}`));
+//     elem.addEventListener(
+//         "click",
+//         (e) => alert(`Diving: ${elem.tagName}`),
+//         true
+//     );
+//     elem.addEventListener("click", (e) => alert(`Emersion: ${elem.tagName}`));
 // }
 
 //!=============================================
@@ -41,11 +41,11 @@ childA.addEventListener("click", (e) => {
 // When loading the page, the script should automatically calculate the cost based on the default data that you set in the markup.
 
 // const data = {
-//   quantity: 0,
-//   price: 0,
-//   calcTotalPrice() {
-//     return (this.quantity * this.price).toFixed(2);
-//   },
+//     quantity: 0,
+//     price: 0,
+//     calcTotalPrice() {
+//         return (this.quantity * this.price).toFixed(2);
+//     },
 // };
 
 // //dom links
@@ -64,27 +64,27 @@ childA.addEventListener("click", (e) => {
 
 // //functions
 // function handleFormChange({ target }) {
-//   const { value } = target;
+//     const { value } = target;
 
-//   if (target === priceInput) {
-//     if (!Number(value)) {
-//       console.log("Not a number!");
-//       return;
+//     if (target === priceInput) {
+//         if (!Number(value)) {
+//         console.log("Not a number!");
+//         return;
+//         }
+//     } else if (target === quantityInput) {
+//         amount.textContent = value;
 //     }
-//   } else if (target === quantityInput) {
-//     amount.textContent = value;
-//   }
 
-//   target.setAttribute("value", value);
-//   dataFill();
-//   displayTotal();
+//     target.setAttribute("value", value);
+//     dataFill();
+//     displayTotal();
 // }
 
 // function dataFill() {
-//   data.quantity = quantityInput.getAttribute("value");
-//   data.price = priceInput.getAttribute("value");
+//     data.quantity = quantityInput.getAttribute("value");
+//     data.price = priceInput.getAttribute("value");
 // }
 
 // function displayTotal() {
-//   total.textContent = data.calcTotalPrice() + " USD";
+//     total.textContent = data.calcTotalPrice() + " USD";
 // }
