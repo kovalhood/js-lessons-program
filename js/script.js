@@ -1,89 +1,90 @@
-// Emergence of events
-const parentDiv = document.getElementById("parentDiv");
-const childA = document.getElementById("childA");
+const outputScrollStandart = document.getElementById("outputScrollStandart");
+const outputScrollThrottling = document.getElementById(
+    "outputScrollThrottling"
+);
+const eventScrollCounter = {
+    standart: 0,
+    throttled: 0,
+};
 
-document.body.addEventListener("click", (e) => {
-    e.preventDefault();
-    alert("body");
+document.addEventListener("scroll", () => {
+    eventScrollCounter.standart += 1;
+    outputScrollStandart.textContent = eventScrollCounter.standart;
 });
 
-parentDiv.addEventListener("click", (e) => {
-    alert("Parent Div");
-});
+document.addEventListener(
+    "scroll",
+    _.throttle(() => {
+        eventScrollCounter.throttled += 1;
+        outputScrollThrottling.textContent = eventScrollCounter.throttled;
+    }, 1500)
+);
 
-childA.addEventListener("click", (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    alert("Child A");
-});
+//!================================
 
-//! ===================================================
-
-// for (let elem of document.querySelectorAll("*")) {
-//     elem.addEventListener(
-//         "click",
-//         (e) => alert(`Diving: ${elem.tagName}`),
-//         true
-//     );
-//     elem.addEventListener("click", (e) => alert(`Emersion: ${elem.tagName}`));
-// }
-
-//!=============================================
-
-// Create a product cost calculator depending on the price. When working with events, use delegation. Render all markup via JS
-// When the data variable is entered in input #1 or #2, the total cost should be automatically recalculated
-// The currency - USD should always be displayed
-// The total amount is displayed with pennies (2 decimal places)
-// In the signature of the second input, there should be a color hint of how many pounds the user selected on the second input.
-// The color tooltip should change its value when the slider is dragged.
-// In input No. 2, set min and max threshold by yourself.
-// When loading the page, the script should automatically calculate the cost based on the default data that you set in the markup.
-
-// const data = {
-//     quantity: 0,
-//     price: 0,
-//     calcTotalPrice() {
-//         return (this.quantity * this.price).toFixed(2);
-//     },
+// const outputResizeStandart = document.getElementById("outputResizeStandart");
+// const outputResizeThrottling = document.getElementById(
+//      "outputResizeThrottling"
+// );
+// const eventResizeCounter = {
+//     standart: 0,
+//     throttled: 0,
 // };
 
-// //dom links
-// const mainForm = document.getElementById("form");
-// const priceInput = document.getElementById("price");
-// const quantityInput = document.getElementById("quantity");
-// const amount = document.getElementById("amount");
-// const total = document.getElementById("total");
+// window.addEventListener("resize", () => {
+//     eventResizeCounter.standart += 1;
+//     outputResizeStandart.textContent = eventResizeCounter.standart;
+// });
 
-// //data fill
-// dataFill();
-// displayTotal();
+// window.addEventListener(
+//     "resize",
+//     _.throttle(() => {
+//         eventResizeCounter.throttled += 1;
+//         outputResizeThrottling.textContent = eventResizeCounter.throttled;
+//     }, 1500)
+// );
 
-// //events
-// mainForm.addEventListener("change", handleFormChange);
+//!================================
 
-// //functions
-// function handleFormChange({ target }) {
-//     const { value } = target;
+// const nameInput = document.getElementById("nameInput");
 
-//     if (target === priceInput) {
-//         if (!Number(value)) {
-//         console.log("Not a number!");
-//         return;
+// nameInput.addEventListener(
+//     "input",
+//     _.debounce(handleInputDebounce, 1000, {
+//         leading: true,
+//         trailing: false,
+//     })
+// );
+
+// function handleInputDebounce({ target }) {
+//     console.log(target.value);
+// }
+
+//!================================
+
+// const CORRECT_INPUT_LENGTH = {
+//     min: 3,
+//     max: 15,
+// };
+// const CLASS_NAMES = {
+//     wrong: "wrong",
+//     correct: "correct",
+// };
+
+// const signInForm = document.getElementById("signInForm");
+
+// signInForm.addEventListener(
+//     "input",
+//     _.debounce(({ target }) => {
+//         if (
+//         target.value.length < CORRECT_INPUT_LENGTH.min ||
+//         target.value.length > CORRECT_INPUT_LENGTH.max
+//         ) {
+//         target.classList.add(CLASS_NAMES.wrong);
+//         target.classList.remove(CLASS_NAMES.correct);
+//         } else {
+//         target.classList.add(CLASS_NAMES.correct);
+//         target.classList.remove(CLASS_NAMES.wrong);
 //         }
-//     } else if (target === quantityInput) {
-//         amount.textContent = value;
-//     }
-
-//     target.setAttribute("value", value);
-//     dataFill();
-//     displayTotal();
-// }
-
-// function dataFill() {
-//     data.quantity = quantityInput.getAttribute("value");
-//     data.price = priceInput.getAttribute("value");
-// }
-
-// function displayTotal() {
-//     total.textContent = data.calcTotalPrice() + " USD";
-// }
+//     }, 800)
+// );
