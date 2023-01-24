@@ -1,6 +1,6 @@
 /* .text {
   font-family: sans-serif;
-  font-size: 40px;
+  font-size: 24px;
   cursor: pointer;
 }
 
@@ -19,17 +19,10 @@ a[href="https://google.com"]
 {
   font-size: 30px;
   color: red;
-} */
+} 
 
-/* .container .text:last-child {
+.container .text:last-child {
   color: blue;
-} */
-
-/* body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .form {
@@ -41,7 +34,7 @@ a[href="https://google.com"]
 
 /* ======================================== */
 
-* {
+/* * {
     margin: 0;
     padding: 0;
 }
@@ -111,4 +104,4 @@ body.open>.overlay {
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
-}
+} */

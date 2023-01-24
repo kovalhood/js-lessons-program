@@ -1,20 +1,15 @@
-// const text = document.querySelector("span + .text");
-// console.log("🚀 ~ text", text);
-
-// text.classList.add("active");
-
 // const block = document.getElementById("block");
 // block.style.backgroundColor = "blue";
 
 // const texts = document.getElementsByClassName("text");
-// texts[3].classList.add("active");
+// texts[2].classList.add("active");
 
 // console.log(texts);
 
 // const text1 = document.querySelector(".container .text:last-child");
 // console.log("🚀 ~ text1", text1)
 
-// text1.style.backgroundColor = "pink";
+// text1.style.backgroundColor = "green";
 
 // const buttons = [...document.getElementsByTagName("button")];
 
@@ -30,6 +25,8 @@
 //   console.log(event);
 //   console.log(event.currentTarget)
 // });
+
+//!========================================================
 
 // const form = document.querySelector(".form");
 
@@ -51,6 +48,8 @@
 //   console.log(`Login: ${login.value}, Password: ${password.value}`);
 //   event.currentTarget.reset();
 // }
+
+//!========================================================
 
 // const mango = {
 //   username: "Mango",
@@ -91,24 +90,24 @@
 
 //!========================================================
 
-const openModalBtn = document.getElementById("openModalBtn");
-const overlay = document.getElementById("overlay");
-const closeBtn = document.getElementById("closeBtn");
-const openClass = "open";
+// const openModalBtn = document.getElementById("openModalBtn");
+// const overlay = document.getElementById("overlay");
+// const closeBtn = document.getElementById("closeBtn");
+// const openClass = "open";
 
-openModalBtn.addEventListener("click", handleModalOpen);
-overlay.addEventListener("click", handleModalClose);
-closeBtn.addEventListener("click", handleModalClose);
-document.body.addEventListener("keydown", handleModalCloseOnESC);
+// openModalBtn.addEventListener("click", handleModalOpen);
+// overlay.addEventListener("click", handleModalClose);
+// closeBtn.addEventListener("click", handleModalClose);
+// document.body.addEventListener("keydown", handleModalCloseOnESC);
 
-function handleModalCloseOnESC({ key }) {
-  // let key = event.key
-  if (key === "Escape") handleModalClose();
-}
+// function handleModalCloseOnESC({ key }) {
+//   // let key = event.key
+//   if (key === "Escape") handleModalClose();
+// }
 
-function handleModalOpen() {
-  document.body.classList.add(openClass);
-}
-function handleModalClose() {
-  document.body.classList.remove(openClass);
-}
+// function handleModalOpen() {
+//   document.body.classList.add(openClass);
+// }
+// function handleModalClose() {
+//   document.body.classList.remove(openClass);
+// }
