@@ -1,92 +1,109 @@
-// for (let i = 3; i > 0; i--) {
-//     const delay = i * 1000;
-//     setTimeout(() => console.log(i), delay);
-// }
+// console.log("A");
 
-//!==============
+// Promise.reject("B")
+//   .then(
+//     (value) => console.log(value),
+//     (err) => console.error("C")
+//   )
+//   //   .catch((err) => console.error("C"))
+//   .finally(() => console.log("D"));
 
-// setTimeout(() => console.log(3), 3000);
-// setTimeout(() => console.log(2), 2000);
-// setTimeout(() => console.log(1), 1000);
+// console.log("E");
 
-//!==============
+//!==============================
 
-// for (let i = 3; i > 0; i--) { // i = 3
-//     const delay = i * 1000; // delay = 3000
-//     setTimeout(() => console.log(3), 3000);
-// }
-
-// for (let i = 3; i > 0; i--) { // i = 2
-//     const delay = i * 1000; // delay = 2000
-//     setTimeout(() => console.log(2), 2000);
-// }
-
-// for (let i = 3; i > 0; i--) { // i = 1
-//     const delay = i * 1000; // delay = 1000
-//     setTimeout(() => console.log(1), 1000);
-// }
-
-//!==============
-
-// Write a New Year's countdown timer that can be stopped by clicking the **Stop** button
-// Styles and markup can be taken here - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_countdown
-// An additional task is to rewrite the timer on a class (remember the classes from the 5th module, additional practice before React)
-
-// const timeEl = document.getElementById("time");
-// const stopBtnEl = document.getElementById("stopBtn");
-// const continueBtnEl = document.getElementById("continueBtn");
-
-/*
-New Year - January 1 00:00 2024
-Today's date is January 25, 20:20 2023
-
-we will use setInterval() to run the counter
-
-1. subtract the current date from the New Year - this way we will get the time difference (we will work with milliseconds)
-2. from the milliseconds obtained in step 1, we will extract the number of days, hours, minutes and seconds remaining until the New Year
-3. show this data to the user on the page
-*/
-
-// let isTimerRun = true;
-// const newYearDate = new Date(`Jan 1, ${new Date().getFullYear() + 1}`);
-
-// countDownTimeToNY();
-// let timerId = setInterval(countDownTimeToNY, 1000);
-
-// stopBtnEl.addEventListener("click", () => {
-//     stopInterval();
-//     if (!isTimerRun) {
-//         continueBtnEl.disabled = false;
-//         continueBtnEl.addEventListener("click", continueInterval);
-//     }
+// let promise = new Promise(function (resolve, reject) {
+//   setTimeout(() => resolve(2), 1000);
+//   resolve(1);
 // });
 
-// function countDownTimeToNY() {
-//     const now = Date.now();
-//     const diff = newYearDate - now; // how many milliseconds are left until the New Year
+// promise.then((value) => console.log(value));
 
-//     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-//     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-//     const minutes = Math.floor((diff / (1000 * 60)) % 60);
-//     const seconds = Math.floor((diff / 1000) % 60);
+//!==============================
 
-//     timeEl.textContent = `${days} d. ${hours} h. ${minutes} m. ${seconds} s.`;
+// console.log("Request data...");
 
-//     if (diff <= 0) {
-//         stopInterval();
-//         timeEl.textContent = "Happy New Year!";
-//     }
-// }
+// setTimeout(() => {
+//   console.log("Preparing data...");
 
-// function continueInterval() {
-//     isTimerRun = true;
-//     continueBtnEl.disabled = true;
-//     alert("Continue");
-//     timerId = setInterval(countDownTimeToNY, 1000);
-// }
+//   const data = {
+//     id: 1,
+//     text: "lorem ipsum dolor sit amet.",
+//     status: "important",
+//   };
 
-// function stopInterval() {
-//     isTimerRun = false;
-//     clearInterval(timerId);
-//     alert("The timer has been stopped!");
-// }
+//   setTimeout(() => {
+//     console.log("Data received: ", data);
+//   }, 2000);
+// }, 2000);
+
+// console.log("Request data...");
+
+// const promise = new Promise((res, rej) => {
+//   setTimeout(() => {
+//     console.log("Preparing data...");
+
+//     const data = {
+//       id: 1,
+//       text: "lorem ipsum dolor sit amet.",
+//       status: "important",
+//     };
+
+//     if (!data.id) rej(new Error("No id!"));
+//     res(data);
+//   }, 2000);
+// });
+
+// promise
+//   .then((data) => {
+//     // return new Promise((res) => {
+//     //   console.log("Data changed");
+//     //   data.status = "ordinary";
+//     //   res(data);
+//     // });
+//     console.log("Data changed");
+//     data.status = "ordinary";
+//     return data;
+//   })
+//   .then((data) => console.log(data))
+//   .catch((err) => console.error(err))
+//   .finally(() => console.log("Promise end"));
+
+// promise
+//   .then((data) => {
+//     const p = new Promise((res) => {
+//       console.log("Data changed");
+//       data.status = "ordinary";
+//       res(data);
+//     });
+
+//     p.then((data) => console.log(data));
+//   })
+//   .catch((err) => console.error(err))
+//   .finally(() => console.log("Promise end"));
+
+//!==============================
+
+// const promise = new Promise((resolve, reject) => {
+//   resolve("OK");
+//   reject("Error: something went wrong");
+// });
+
+// promise.then((value) => console.log(value));
+
+//!==============================
+
+// const sleep = (ms) => new Promise((res) => setTimeout(() => res(ms), ms));
+
+// sleep(2000).then(value => console.log(`after ${value}ms`))
+// sleep(5000).then(value => console.log(`after ${value}ms`))
+
+// Promise.all([sleep(2000), sleep(5000)]).then((value) => {
+//   console.log(value);
+//   console.log("All promises");
+// });
+
+// Promise.race([sleep(2000), sleep(5000), sleep(500)]).then((value) => {
+//   console.log(value);
+//   console.log("Race promises");
+// });
