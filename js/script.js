@@ -12,15 +12,6 @@
 
 //!==============================
 
-// let promise = new Promise(function (resolve, reject) {
-//   setTimeout(() => resolve(2), 1000);
-//   resolve(1);
-// });
-
-// promise.then((value) => console.log(value));
-
-//!==============================
-
 // console.log("Request data...");
 
 // setTimeout(() => {
@@ -56,11 +47,6 @@
 
 // promise
 //   .then((data) => {
-//     // return new Promise((res) => {
-//     //   console.log("Data changed");
-//     //   data.status = "ordinary";
-//     //   res(data);
-//     // });
 //     console.log("Data changed");
 //     data.status = "ordinary";
 //     return data;
