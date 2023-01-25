@@ -1,72 +1,92 @@
-console.log("before try catch");
+// for (let i = 3; i > 0; i--) {
+//     const delay = i * 1000;
+//     setTimeout(() => console.log(i), delay);
+// }
 
-try {
-    const data = '{"name":"John", "age":30, "car":null}';
-    console.log(JSON.parse(data));
-} catch (err) {
-    console.error(err.message);
-}
+//!==============
 
-for (let i = 0; i < 10; i++) {
-    try {
-        if (i === 5) throw new Error("i is 5");
-        console.log(i);
-    } catch (err) {
-        console.error(err.message);
-    }
-}
+// setTimeout(() => console.log(3), 3000);
+// setTimeout(() => console.log(2), 2000);
+// setTimeout(() => console.log(1), 1000);
 
-console.log("after try catch");
+//!==============
 
-//! =========================================
+// for (let i = 3; i > 0; i--) { // i = 3
+//     const delay = i * 1000; // delay = 3000
+//     setTimeout(() => console.log(3), 3000);
+// }
 
-// import { save, load } from "./storage.js";
+// for (let i = 3; i > 0; i--) { // i = 2
+//     const delay = i * 1000; // delay = 2000
+//     setTimeout(() => console.log(2), 2000);
+// }
 
-// const formData = {
-//     email: "aaa@gmail.com",
-//     message: "hello",
-// };
+// for (let i = 3; i > 0; i--) { // i = 1
+//     const delay = i * 1000; // delay = 1000
+//     setTimeout(() => console.log(1), 1000);
+// }
 
-// save("feedback-form-state", formData);
+//!==============
 
-// const data = load("feedback-form-state").message;
+// Write a New Year's countdown timer that can be stopped by clicking the **Stop** button
+// Styles and markup can be taken here - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_countdown
+// An additional task is to rewrite the timer on a class (remember the classes from the 5th module, additional practice before React)
 
-// console.log(data);
-
-//! =========================================
-
-/*
-Write a Todo-list where you can create, delete items and save the list in local storage
-Styles and markup can be taken from here - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_todo
-*/
+// const timeEl = document.getElementById("time");
+// const stopBtnEl = document.getElementById("stopBtn");
+// const continueBtnEl = document.getElementById("continueBtn");
 
 /*
-- without local storage
-    1. write the logic of adding a task by pressing the add button
-        1.1. read the value from the input field
-        1.2. we check for an empty term, if it is empty, we inform the user about it and do not add a task
-        1.3. if there is a task, then we create a list item to which we add the text of the task
-        1.4. add a cross to the list item
-        1.5. clear the input field
-    2. write the logic of the task state (completed or not)
-        2.1. by clicking on the excess - toddle class check
-    3. write the logic for removing a task from the list
-        3.1. if we clicked on the cross - we delete the excess from the page
+New Year - January 1 00:00 2024
+Today's date is January 25, 20:20 2023
 
-- with local storage
-    1. we will store tasks in the form of an array of objects
-        1.1. object with fields: text, isDone, ID. The ID is required to search for items, to delete items, and to update the status of items. 
-        The identifier must be both in the element and in the object in the repository.
-    2. when we add li to the page, we will add it to storage
-    3. write the logic of the function that will retrieve data from storage and add them to the page in the form of extras
-    4. write the logic for removing the task from the page and for updating the status of the task.
+we will use setInterval() to run the counter
+
+1. subtract the current date from the New Year - this way we will get the time difference (we will work with milliseconds)
+2. from the milliseconds obtained in step 1, we will extract the number of days, hours, minutes and seconds remaining until the New Year
+3. show this data to the user on the page
 */
 
-// import { addNewTask, handleTaskBehavior, fillTasksList } from "./functions.js";
+// let isTimerRun = true;
+// const newYearDate = new Date(`Jan 1, ${new Date().getFullYear() + 1}`);
 
-// const addBtn = document.getElementById("addBtn");
-// const myUL = document.getElementById("myUL");
+// countDownTimeToNY();
+// let timerId = setInterval(countDownTimeToNY, 1000);
 
-// addBtn.addEventListener("click", addNewTask);
-// myUL.addEventListener("click", handleTaskBehavior);
-// window.addEventListener("DOMContentLoaded", fillTasksList);
+// stopBtnEl.addEventListener("click", () => {
+//     stopInterval();
+//     if (!isTimerRun) {
+//         continueBtnEl.disabled = false;
+//         continueBtnEl.addEventListener("click", continueInterval);
+//     }
+// });
+
+// function countDownTimeToNY() {
+//     const now = Date.now();
+//     const diff = newYearDate - now; // how many milliseconds are left until the New Year
+
+//     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+//     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+//     const minutes = Math.floor((diff / (1000 * 60)) % 60);
+//     const seconds = Math.floor((diff / 1000) % 60);
+
+//     timeEl.textContent = `${days} d. ${hours} h. ${minutes} m. ${seconds} s.`;
+
+//     if (diff <= 0) {
+//         stopInterval();
+//         timeEl.textContent = "Happy New Year!";
+//     }
+// }
+
+// function continueInterval() {
+//     isTimerRun = true;
+//     continueBtnEl.disabled = true;
+//     alert("Continue");
+//     timerId = setInterval(countDownTimeToNY, 1000);
+// }
+
+// function stopInterval() {
+//     isTimerRun = false;
+//     clearInterval(timerId);
+//     alert("The timer has been stopped!");
+// }
