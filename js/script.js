@@ -1,95 +1,48 @@
-// console.log("A");
+import API from "./api.js";
 
-// Promise.reject("B")
-//   .then(
-//     (value) => console.log(value),
-//     (err) => console.error("C")
-//   )
-//   //   .catch((err) => console.error("C"))
-//   .finally(() => console.log("D"));
+const form = document.getElementById("form");
 
-// console.log("E");
+form.addEventListener("submit", onSubmit);
 
-//!==============================
+function onSubmit(e) {
+    e.preventDefault();
 
-// console.log("Request data...");
+    const form = e.currentTarget;
+    const inputValue = form.elements.news.value;
 
-// setTimeout(() => {
-//   console.log("Preparing data...");
+    API.getNews(inputValue)
+        .then(({ articles }) => {
+        if (articles.length === 0) throw new Error("No data");
 
-//   const data = {
-//     id: 1,
-//     text: "lorem ipsum dolor sit amet.",
-//     status: "important",
-//   };
+        return articles.reduce(
+            (markup, article) => createMarkup(article) + markup,
+            ""
+        );
+        })
+        // .then((markup) => updateNewsList(markup));
+        .then(updateNewsList)
+        .catch(onError)
+        .finally(() => form.reset());
+}
 
-//   setTimeout(() => {
-//     console.log("Data received: ", data);
-//   }, 2000);
-// }, 2000);
+function createMarkup({ author, title, description, url, urlToImage }) {
+    return `
+        <div class="article-card">
+            <h2 class="article-title">${title}</h2>
+            <h3 class="article-author">${author || "Anonym"}</h3>
+            <img src=${urlToImage} class="article-img">
+            <p class="article-description">${description}</p>
+            <a href=${url} class="article-link" target="_blank">Read more</a>
+        </div>
+        
+        `;
+}
 
-// console.log("Request data...");
+function updateNewsList(markup) {
+    document.getElementById("articlesWrapper").innerHTML = markup;
+}
 
-// const promise = new Promise((res, rej) => {
-//   setTimeout(() => {
-//     console.log("Preparing data...");
-
-//     const data = {
-//       id: 1,
-//       text: "lorem ipsum dolor sit amet.",
-//       status: "important",
-//     };
-
-//     if (!data.id) rej(new Error("No id!"));
-//     res(data);
-//   }, 2000);
-// });
-
-// promise
-//   .then((data) => {
-//     console.log("Data changed");
-//     data.status = "ordinary";
-//     return data;
-//   })
-//   .then((data) => console.log(data))
-//   .catch((err) => console.error(err))
-//   .finally(() => console.log("Promise end"));
-
-// promise
-//   .then((data) => {
-//     const p = new Promise((res) => {
-//       console.log("Data changed");
-//       data.status = "ordinary";
-//       res(data);
-//     });
-
-//     p.then((data) => console.log(data));
-//   })
-//   .catch((err) => console.error(err))
-//   .finally(() => console.log("Promise end"));
-
-//!==============================
-
-// const promise = new Promise((resolve, reject) => {
-//   resolve("OK");
-//   reject("Error: something went wrong");
-// });
-
-// promise.then((value) => console.log(value));
-
-//!==============================
-
-// const sleep = (ms) => new Promise((res) => setTimeout(() => res(ms), ms));
-
-// sleep(2000).then(value => console.log(`after ${value}ms`))
-// sleep(5000).then(value => console.log(`after ${value}ms`))
-
-// Promise.all([sleep(2000), sleep(5000)]).then((value) => {
-//   console.log(value);
-//   console.log("All promises");
-// });
-
-// Promise.race([sleep(2000), sleep(5000), sleep(500)]).then((value) => {
-//   console.log(value);
-//   console.log("Race promises");
-// });
+function onError(err) {
+    console.error(err);
+    updateNewsList("<p>Articles not found</p>");
+}
