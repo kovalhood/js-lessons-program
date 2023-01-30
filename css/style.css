@@ -2,15 +2,32 @@ body {
     font-family: sans-serif;
 }
 
-input {
-    padding: 10px 20px;
-    border-radius: 15px;
-    font-size: 30px;
-    border: 2px solid black;
+button {
+    margin: 0 auto;
+    margin-top: 50px;
+    display: block;
 }
 
-input[type="submit"] {
-    background-color: rgb(25, 123, 221);
+button:disabled {
+    background-color: #c1c1c1;
+    cursor: not-allowed;
+}
+
+button.hidden {
+    display: none;
+}
+
+input,
+button {
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 30px;
+}
+
+input[type="submit"],
+button {
+    border: none;
+    background-color: rgba(45, 45, 233, 0.731);
     color: white;
     cursor: pointer;
 }
@@ -18,8 +35,8 @@ input[type="submit"] {
 #articlesWrapper {
     margin-top: 10px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
 }

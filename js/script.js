@@ -1,36 +1,54 @@
-import API from "./api.js";
+import LoadMoreBtn from "./components/LoadMoreBtn.js";
+import NewsApi from "./NewsApi.js";
 
 const form = document.getElementById("form");
+const loadMoreBtn = new LoadMoreBtn({
+    selector: "#loadMoreBtn",
+    isHidden: true,
+});
+
+const newsApi = new NewsApi();
 
 form.addEventListener("submit", onSubmit);
+loadMoreBtn.button.addEventListener("click", fetchNews);
 
 function onSubmit(e) {
     e.preventDefault();
 
     const form = e.currentTarget;
-    const inputValue = form.elements.news.value;
+    newsApi.searchQuery = form.elements.news.value.trim();
+    clearNewsList();
+    newsApi.resetPage();
+    loadMoreBtn.show();
 
-    API.getNews(inputValue)
+    fetchNews().finally(() => form.reset());
+}
+
+function fetchNews() {
+    loadMoreBtn.disable();
+    return newsApi
+        .getNews()
         .then(({ articles }) => {
-        if (articles.length === 0) throw new Error("No data");
+            if (articles.length === 0) throw new Error("No data");
 
         return articles.reduce(
             (markup, article) => createMarkup(article) + markup,
             ""
         );
-        })
-        // .then((markup) => updateNewsList(markup));
-        .then(updateNewsList)
-        .catch(onError)
-        .finally(() => form.reset());
+    })
+    .then((markup) => {
+        updateNewsList(markup);
+        loadMoreBtn.enable();
+    })
+    .catch(onError);
 }
 
 function createMarkup({ author, title, description, url, urlToImage }) {
     return `
         <div class="article-card">
+            <img src=${urlToImage} class="article-img">
             <h2 class="article-title">${title}</h2>
             <h3 class="article-author">${author || "Anonym"}</h3>
-            <img src=${urlToImage} class="article-img">
             <p class="article-description">${description}</p>
             <a href=${url} class="article-link" target="_blank">Read more</a>
         </div>
@@ -38,8 +56,14 @@ function createMarkup({ author, title, description, url, urlToImage }) {
         `;
 }
 
+function clearNewsList() {
+    document.getElementById("articlesWrapper").innerHTML = "";
+}
+
 function updateNewsList(markup) {
-    document.getElementById("articlesWrapper").innerHTML = markup;
+    document
+        .getElementById("articlesWrapper")
+        .insertAdjacentHTML("beforeend", markup);
 }
 
 function onError(err) {
