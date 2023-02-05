@@ -1,4 +1,4 @@
-# JS Module 11 Lesson 2
+# JS Module 11 Lesson 2 News API Refactor
 
 - Introductions (timing 1 minutes)
 - Play Kahoot (timing 15-20 minutes)
