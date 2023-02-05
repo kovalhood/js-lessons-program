@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <form id="form">
-      <input type="text" name="news" placeholder="Search news" />
-      <input type="submit" value="Search" />
-    </form>
-    <div id="articlesWrapper"></div>
+    <div id="myDIV" class="header">
+      <h2 style="margin: 5px">My To Do List</h2>
+      <input type="text" id="myInput" placeholder="Title..." />
+      <span class="addBtn" id="addBtn">Add</span>
+    </div>
 
-    <button type="button" id="loadMoreBtn" disabled>Load more</button>
+    <ul id="myUL"></ul>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/script.js" type="module"></script>
   </body>
 </html>
