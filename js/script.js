@@ -1,85 +1,65 @@
-function getStone(stoneName) {
-    const stones = {
-        Emerald: {
-        price: 1300,
-        quantity: 4,
-        },
-        Diamond: {
-        price: 2700,
-        quantity: 3,
-        },
-        Sapphire: {
-        price: 400,
-        quantity: 7,
-        },
-        Rubble: {
-        price: 200,
-        quantity: 2,
-        },
-    };
+import API from "./api.js";
 
-    //   return Promise.resolve(stones[stoneName]);
-    return new Promise((resolve) =>
-        setTimeout(() => resolve(stones[stoneName]), 500)
+const form = document.getElementById("form");
+
+form.addEventListener("submit", onSubmit);
+
+async function onSubmit(e) {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const inputValue = form.elements.news.value;
+
+  try {
+    const articles = await API.getNews(inputValue);
+
+    if (articles.length === 0) throw new Error("No data");
+
+    const markup = articles.reduce(
+      (markup, article) => createMarkup(article) + markup,
+      ""
     );
+
+    updateNewsList(markup);
+  } catch (err) {
+    onError(err);
+  } finally {
+    form.reset();
+  }
+
+  // API.getNews(inputValue)
+  //   .then((articles) => {
+  //     if (articles.length === 0) throw new Error("No data");
+
+  //     return articles.reduce(
+  //       (markup, article) => createMarkup(article) + markup,
+  //       ""
+  //     );
+  //   })
+  //   // .then((markup) => updateNewsList(markup));
+  //   .then(updateNewsList)
+  //   .catch(onError)
+  //   .finally(() => form.reset());
 }
 
-/*
-    1. await can only be used inside asynchronous functions
-    2. the await instruction freezes the execution of an asynchronous function until the promise enters the rejected or fulfilled state 
-    (that is, we simulate synchronicity in the execution of asynchronous code)
-    3. await will not return a promise, but its result
-    4. an asynchronous function always returns a promise
-*/
-
-async function getStonesSequentiallyAsync() {
-    console.time("getStones");
-    console.log("start");
-    //   const emerald = await getStone("Emerald");
-    //   console.log(emerald);
-    //   const sapphire = await getStone("Sapphire");
-    //   console.log(sapphire);
-    const emerald = getStone("Emerald");
-    const sapphire = getStone("Sapphire");
-
-    const stones = await Promise.all([emerald, sapphire]);
-    console.log("🚀 ~ stones", stones);
-
-    console.log("end");
-    console.timeEnd("getStones");
-    return stones;
+function createMarkup({ author, title, description, url, urlToImage }) {
+  return `
+    <div class="article-card">
+        <h2 class="article-title">${title}</h2>
+        <h3 class="article-author">${author || "Anonym"}</h3>
+        <img src=${urlToImage} class="article-img">
+        <p class="article-description">${description}</p>
+        <a href=${url} class="article-link" target="_blank">Read more</a>
+    </div>
+    
+    `;
 }
 
-function getStonesSequentially() {
-    getStone("Emerald").then((stone) => {
-        console.log(stone);
-
-        getStone("Sapphire").then(console.log);
-    });
+function updateNewsList(markup) {
+  document.getElementById("articlesWrapper").innerHTML = markup;
 }
-// console.time("getStones");
-// console.timeEnd("getStones");
-// getStonesSequentially();
 
-console.log("Before");
-getStonesSequentiallyAsync();
-console.log("After");
-
-/*
-Macro tasks and Microtasks
-ScriptQueue:
-PromiseJobs:
-*/
-
-// console.log("1"); //synchronous operation 1
-
-// setTimeout(() => console.log("2"), 0); //asynchronous operation, macro task, 5
-
-// const promise = new Promise((res) => {
-//   console.log("3"); //synchronous operation 2
-//   res("4");
-// });
-
-// promise.then((data) => console.log(data)); //asynchronous operation, microtask, 4
-
-// console.log("5"); //synchronous operation 3
+function onError(err) {
+  console.error(err);
+  updateNewsList("<p>Articles not found</p>");
+}
